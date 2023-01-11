@@ -1,4 +1,6 @@
 #!/usr/bin/python3
-class square:
+"""to create a class"""
+
+class Square:
     """empty class docs"""
     pass
