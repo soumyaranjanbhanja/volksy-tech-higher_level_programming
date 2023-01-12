@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """class"""
 
-:wq!
+
 class Square:
     """Square is class"""
     def __init__(self, size=0):
