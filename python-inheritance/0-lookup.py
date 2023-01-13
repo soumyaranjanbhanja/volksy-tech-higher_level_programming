@@ -11,4 +11,5 @@ def lookup(obj):
     Returns:
         Na
     """
+
     return [i for i in dir(obj)]
