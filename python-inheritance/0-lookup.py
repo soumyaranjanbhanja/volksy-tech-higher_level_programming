@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""Lookup
+"""
+Attribute lookup
 """
 
 
 def lookup(obj):
-    """Function that returns the list of avail. attributes and methods
-    of an object.
+    """Lookup all attributes in Class
+    Args:
+        obj: object class
+    Returns:
+        Na
     """
-
-    return dir(obj)
+    return [i for i in dir(obj)]
