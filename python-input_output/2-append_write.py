@@ -1,18 +1,15 @@
 #!/usr/bin/python3
-""" This module contains a function that appends to a text file """
+""" Add all arguments to a Python list and save them to a file """
+import sys
 
+if __name__ == "__main__":
+    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+    load_from_json_file = \
+        __import__('6-load_from_json_file').load_from_json_file
 
-def append_write(filename="", text=""):
-    """
-    Function that appends to a text file.
-
-    Args:
-        filename: filename
-        text: text to write
-
-    Raises:
-        Exception: when the file can be opened
-    """
-
-    with open(filename, "a", encoding="utf-8") as f:
-        return f.write(text)
+    try:
+        items = load_from_json_file("add_item.json")
+    except FileNotFoundError:
+        items = []
+    items.extend(sys.argv[1:])
+    save_to_json_file(items, "add_item.json")
