@@ -1,11 +1,17 @@
 #!/usr/bin/python3
-# 7-save_to_json_file.py
-# Brennan D Baraban <375@holbertonschool.com>
-"""Defines a JSON file-writing function."""
-import json
+"""Script"""
+import sys
+save_to_json_file = import('5-save_to_json_file').save_to_json_file
+load_from_json_file = import('6-load_from_json_file').load_from_json_file
 
+name = "add_item.json"
+load = []
 
-def save_to_json_file(my_obj, filename):
-    """Write an object to a text file using JSON representation."""
-    with open(filename, "w") as f:
-        json.dump(my_obj, f)
+try:
+    load = load_from_json_file(name)
+except:
+    pass
+
+for i in range(1, len(sys.argv)):
+    load.append(sys.argv[i])
+save_to_json_file(load, name)
