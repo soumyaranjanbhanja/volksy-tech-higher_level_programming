@@ -3,4 +3,4 @@
 CREATE USER user_0d_1@localhost
 IDENTIFIED BY 'user_0d_1_pwd';
 -- all databases . all tables
-GRANT ALL PRIVILEGES ON *.* TO user_0d_1@localhost;
+GRANT ALL PRIVILEGES ON *.* TO user_0d_1@localhos:t;
