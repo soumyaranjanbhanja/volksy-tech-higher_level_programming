@@ -1,2 +1,2 @@
--- script show all rows of table
+-- 06
 SELECT * FROM first_table;

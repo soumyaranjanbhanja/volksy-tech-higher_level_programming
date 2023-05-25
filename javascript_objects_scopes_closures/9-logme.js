@@ -1,5 +1,8 @@
 #!/usr/bin/node
-exports.logMe = (function (item) {
-  let counter = -1;
-  return function (item) { counter += 1; console.log(counter + ': ' + item); };
-})();
+// prints the number of arguments already printed and the new argument value.
+
+let i = 0;
+exports.logMe = function (item) {
+  console.log(i + ': ' + item);
+  i++;
+};

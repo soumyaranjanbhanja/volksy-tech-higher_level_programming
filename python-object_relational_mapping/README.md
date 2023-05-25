@@ -1,1 +1,2 @@
-"be cool"
+hello
+

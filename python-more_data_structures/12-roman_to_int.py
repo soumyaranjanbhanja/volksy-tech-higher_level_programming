@@ -1,13 +1,24 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if type(roman_string) is not str or roman_string is None:
+    rom_num = {'I': 1,
+               'V': 5,
+               'X': 10,
+               'L': 50,
+               'C': 100,
+               'D': 500,
+               'M': 1000
+               }
+    if roman_string is None or type(roman_string) is not str:
         return 0
-    nums = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
-    sum = 0
-    for i in range(len(roman_string)):
-        value = nums[roman_string[i]]
-        if i + 1 < len(roman_string) and nums[roman_string[i + 1]] > value:
-            sum -= value
+
+    converted = 0
+    length = len(roman_string)
+    for i in range(length):
+        if i is (length - 1):
+            converted += rom_num[roman_string[i]]
         else:
-            sum += value
-    return sum
+            if rom_num[roman_string[i]] >= rom_num[roman_string[i + 1]]:
+                converted += rom_num[roman_string[i]]
+            else:
+                converted -= rom_num[roman_string[i]]
+    return (converted)

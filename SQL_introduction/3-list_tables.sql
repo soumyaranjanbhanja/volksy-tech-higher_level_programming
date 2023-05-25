@@ -1,2 +1,2 @@
--- script lists all tables in database.
-SHOW TABLES;
+-- 03
+SHOW TABLES

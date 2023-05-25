@@ -1,7 +1,5 @@
--- Lists all shows in a database with a genre linked
-SELECT a.title, b.genre_id
-FROM tv_shows AS a
-LEFT JOIN tv_show_genres AS b
-ON a.id = b.show_id
-WHERE b.genre_id IS NULL
-ORDER BY a.title ASC, b.genre_id ASC;
+-- 12 th
+SELECT tv_shows.title,tv_show_genres.genre_id
+FROM tv_shows LEFT JOIN tv_show_genres ON id = show_id
+WHERE tv_show_genres.genre_id IS NULL
+ORDER BY tv_shows.title,tv_show_genres.genre_id;

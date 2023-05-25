@@ -1,12 +1,14 @@
 #!/usr/bin/node
+// Get the title of Star Wars using API
 const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-let resultDict = {};
-request(url, function (error, response, body) {
-  if (error) {
-    console.log(error);
+const baseUrl = 'https://swapi-api.hbtn.io/api/films/';
+const filmId = process.argv[2];
+
+request.get(baseUrl + filmId, (err, response, body) => {
+  if (err === null) {
+    const data = JSON.parse(body);
+    console.log(data.title);
   } else {
-    resultDict = JSON.parse(body);
-    console.log(resultDict.title);
+    console.log(err);
   }
 });

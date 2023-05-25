@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    numrows = len(matrix)
-    numcols = len(matrix[0])
-    for i in range(0, numrows):
-        for j in range(0, numcols):
-            if j == numcols - 1:
-                print('{:d}'.format(matrix[i][j]), end='')
+    if len(matrix[0]) == 0:
+        print("")
+    for i in range(len(matrix)):
+        for x in range(len(matrix[i])):
+            if x < (len(matrix[i])-1):
+                print("{:d}".format(matrix[i][x]), end=" ")
             else:
-                print('{:d}'.format(matrix[i][j]), end=' ')
-        print()
+                print("{:d}".format(matrix[i][x]))

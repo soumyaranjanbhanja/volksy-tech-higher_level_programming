@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
-    aList = list(tuple_a)
-    bList = list(tuple_b)
+    ls1 = list(tuple_a)
+    ls2 = list(tuple_b)
+    ls3 = []
     for i in range(2):
-        aList.append(0)
-        bList.append(0)
-    sum_0 = aList[0] + bList[0]
-    sum_1 = aList[1] + bList[1]
-    tuple_c = (sum_0, sum_1)
-    return tuple_c
+        ls1.append(0)
+        ls2.append(0)
+        ls3.append(ls1[i] + ls2[i])
+    tup1 = tuple(ls3)
+    return tup1

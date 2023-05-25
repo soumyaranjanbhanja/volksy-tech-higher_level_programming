@@ -1,14 +1,17 @@
 #!/usr/bin/node
-const parentSquare = require('./5-square');
-module.exports = class Square extends parentSquare {
+// class Square that defines a square and inherits from Rectangle of 4-rectangle.js
+
+const SquareBase = require('./5-square');
+
+class Square extends SquareBase {
   charPrint (c) {
     if (c === undefined) {
-      super.print();
-    } else {
-      let i = 0;
-      for (i = 0; i < this.height; i++) {
-        console.log(c.repeat(this.width));
-      }
+      c = 'X';
+    }
+    for (let i = 0; i < this.height; i++) {
+      console.log(c.repeat(this.width));
     }
   }
-};
+}
+
+module.exports = Square;
